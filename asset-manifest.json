@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/Notetaking/static/css/main.073c9b0a.css",
-    "main.js": "/Notetaking/static/js/main.1eac6743.js",
+    "main.css": "/Notetaking/static/css/main.cf7f7dd6.css",
+    "main.js": "/Notetaking/static/js/main.58424441.js",
     "static/js/787.d3befce1.chunk.js": "/Notetaking/static/js/787.d3befce1.chunk.js",
-    "static/media/logo.svg": "/Notetaking/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/Notetaking/index.html",
-    "main.073c9b0a.css.map": "/Notetaking/static/css/main.073c9b0a.css.map",
-    "main.1eac6743.js.map": "/Notetaking/static/js/main.1eac6743.js.map",
+    "main.cf7f7dd6.css.map": "/Notetaking/static/css/main.cf7f7dd6.css.map",
+    "main.58424441.js.map": "/Notetaking/static/js/main.58424441.js.map",
     "787.d3befce1.chunk.js.map": "/Notetaking/static/js/787.d3befce1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.1eac6743.js"
+    "static/css/main.cf7f7dd6.css",
+    "static/js/main.58424441.js"
   ]
 }
