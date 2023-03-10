@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
+import Addnote from './components/Addnote';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </a>
       </header> */}
       <Header />
+      <Addnote/>
     </div>
   );
 }
