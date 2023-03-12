@@ -2,6 +2,7 @@
 import './App.css';
 import Header from './components/Header';
 import Addnote from './components/Addnote';
+import Notelist from './components/Notelist';
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
         </a>
       </header> */}
       <Header />
-      <Addnote/>
+       <Addnote/>
+      {/* <Notelist/> */}
+     
     </div>
   );
 }
