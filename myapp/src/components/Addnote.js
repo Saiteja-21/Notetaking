@@ -6,6 +6,7 @@ import Notelist from './Notelist';
 
 export default function Addnote() {
   const [text,settext]=useState('');
+  const [comp,setcomp]=useState(false);
   // localStorage.setItem('des',ref.current.value);
   function serve(e){
     settext(e.target.value)
@@ -13,23 +14,31 @@ export default function Addnote() {
 
   }
   
+  
   function handlesave(){
     localStorage.setItem('h',(text));
    // console.log(text);
     settext('');
+    if(comp===false){
+      setcomp(!comp);
+
+    }
+   
   }
+  console.log('addcompoenr')
  
   
   return (
     <div>
     
-    <button onClick={handlesave}>save</button>
+    <button onClick={handlesave} >save</button>
     
      <textarea onChange={serve} className='tarea' placeholder='Type to add a note' rows={15} cols={120}>
     
     
      </textarea>
-     <Notelist/>
+     {comp && <Notelist/>}
+   
 
       
     
