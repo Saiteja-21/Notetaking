@@ -3,27 +3,79 @@ import './App.css';
 import Header from './components/Header';
 import Addnote from './components/Addnote';
 import Notelist from './components/Notelist';
+import Search from './components/Search';
+import { useEffect, useState } from 'react';
+import {v4 as uuid} from "uuid";
 
 function App() {
+  const [text,settext]=useState('');
+  const [arr,setarr]=useState([]);
+  const [search,setsearch]=useState('');
+  const [delnote,setdelnote]=useState();
+  
+ 
+  useEffect(()=>{
+   
+  const og=localStorage.getItem('a');
+  const og2=JSON.parse(og);
+  if(og2!==null)
+  setarr(og2);
+  // console.log(og2);
+
+  },[]);
+  useEffect(()=>{
+    localStorage.setItem('a',JSON.stringify( arr));
+ 
+
+  },[arr]);
+ 
+  const usertext=(e)=>{
+     settext(e.target.value);
+  }
+  const onSave=()=>{
+    const obj={id:uuid(),
+                t:text}
+    settext('');
+    setarr([obj,...arr]);
+
+
+  }
+  const searchUserinput=(e)=>{
+    setsearch(e.target.value)
+
+  }
+  const deletenotes=(id)=>{
+    setdelnote(id);
+    console.log(delnote);
+  
+   const arr2=arr.filter((ele)=>ele.id!=id)
+   setarr(arr2)
+   
+  
+    
+  }
+  
+ 
+
+  const originalarr=arr.filter((sample)=>sample.t.includes(search))
+  // useEffect(()=>setdelnote(""),[])
+  
+  
+ 
+  
+  
+  
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+     
       <Header />
-       <Addnote/>
-      {/* <Notelist/> */}
+      <Search s={searchUserinput}/>
+      <Addnote change={usertext} save={onSave}/>
+      
+      <Notelist data={originalarr} del={deletenotes} delnote={delnote} />
+      
+      
+      
      
     </div>
   );
